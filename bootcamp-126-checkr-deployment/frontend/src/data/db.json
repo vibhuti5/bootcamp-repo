@@ -1,0 +1,768 @@
+{
+  "user": {
+    "id": 1,
+    "userName": "ChekerHR",
+    "email": "ChekerHR@gmail.com",
+    "token": "dcnsLJsdlnjcesndcnjlsndcnsljdjxc"
+  },
+  "candidates": [
+    {
+      "id": 1,
+      "name": "John Smith",
+      "email": "john.smith@gmail.com",
+      "dob": "1990-09-10",
+      "age": "33",
+      "phone": 7330862426,
+      "zipcode": 500008,
+      "socialSecurity": "8764-12-6789",
+      "driverLicenseNo": "FTEAT1111",
+      "createdAt": "Nov 29, 2016 11:05:57 AM"
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe",
+      "email": "jane.doe@gmail.com",
+      "dob": "1985-07-15",
+      "age": "37",
+      "phone": 7330862427,
+      "zipcode": 500009,
+      "socialSecurity": "7654-98-1234",
+      "driverLicenseNo": "ABC1234",
+      "createdAt": "Dec 5, 2015 09:30:45 AM"
+    },
+    {
+      "id": 3,
+      "name": "David Johnson",
+      "email": "david.johnson@gmail.com",
+      "dob": "1978-03-20",
+      "age": "44",
+      "phone": 7330862428,
+      "zipcode": 500010,
+      "socialSecurity": "5555-11-7777",
+      "driverLicenseNo": "XYZ5678",
+      "createdAt": "Oct 10, 2014 02:15:30 PM"
+    },
+    {
+      "id": 4,
+      "name": "Sarah Wilson",
+      "email": "sarah.wilson@gmail.com",
+      "dob": "1995-02-25",
+      "age": "27",
+      "phone": 7330862429,
+      "zipcode": 500011,
+      "socialSecurity": "1234-56-7890",
+      "driverLicenseNo": "LMN4321",
+      "createdAt": "Jan 15, 2021 08:45:22 AM"
+    },
+    {
+      "id": 5,
+      "name": "Michael Brown",
+      "email": "michael.brown@gmail.com",
+      "dob": "1980-11-12",
+      "age": "41",
+      "phone": 7330862430,
+      "zipcode": 500012,
+      "socialSecurity": "9876-54-3210",
+      "driverLicenseNo": "PQR9876",
+      "createdAt": "May 20, 2013 03:20:15 PM"
+    },
+    {
+      "id": 6,
+      "name": "Laura Davis",
+      "email": "laura.davis@gmail.com",
+      "dob": "1992-06-05",
+      "age": "29",
+      "phone": 7330862431,
+      "zipcode": 500013,
+      "socialSecurity": "2345-67-8901",
+      "driverLicenseNo": "JKL2345",
+      "createdAt": "Aug 7, 2019 12:10:50 PM"
+    },
+    {
+      "id": 7,
+      "name": "Robert Taylor",
+      "email": "robert.taylor@gmail.com",
+      "dob": "1987-04-18",
+      "age": "34",
+      "phone": 7330862432,
+      "zipcode": 500014,
+      "socialSecurity": "4567-89-0123",
+      "driverLicenseNo": "MNO4567",
+      "createdAt": "Sep 25, 2012 01:55:40 PM"
+    },
+    {
+      "id": 8,
+      "name": "Elizabeth Harris",
+      "email": "elizabeth.harris@gmail.com",
+      "dob": "1982-08-30",
+      "age": "39",
+      "phone": 7330862433,
+      "zipcode": 500015,
+      "socialSecurity": "7890-12-3456",
+      "driverLicenseNo": "XYZ7890",
+      "createdAt": "Dec 1, 2010 11:25:35 AM"
+    },
+    {
+      "id": 9,
+      "name": "William Clark",
+      "email": "william.clark@gmail.com",
+      "dob": "1998-01-02",
+      "age": "24",
+      "phone": 7330862434,
+      "zipcode": 500016,
+      "socialSecurity": "2345-67-8901",
+      "driverLicenseNo": "ABC2345",
+      "createdAt": "Mar 15, 2018 10:15:30 AM"
+    },
+    {
+      "id": 10,
+      "name": "Amanda King",
+      "email": "amanda.king@gmail.com",
+      "dob": "1993-12-09",
+      "age": "28",
+      "phone": 7330862435,
+      "zipcode": 500017,
+      "socialSecurity": "3456-78-9012",
+      "driverLicenseNo": "PQR3456",
+      "createdAt": "Oct 18, 2017 09:10:25 AM"
+    }
+  ],
+  "reports": [
+    {
+      "id": 1,
+      "candidateId": 1,
+      "status": "clear",
+      "adjudication": "-",
+      "package": "Employee pro",
+      "createdAt": "Dec 1, 2016 02:15:55 PM",
+      "completedDate": "Dec 4, 2016 12:00:00 PM",
+      "turnAroundTime": "1 Day, 14 hours"
+    },
+    {
+      "id": 2,
+      "candidateId": 2,
+      "status": "consider",
+      "adjudication": "-",
+      "package": "Employee pro",
+      "createdAt": "Dec 1, 2016 02:15:55 PM",
+      "completedDate": "Dec 4, 2016 12:00:00 PM",
+      "turnAroundTime": "1 Day, 14 hours"
+    },
+    {
+      "id": 3,
+      "candidateId": 3,
+      "status": "clear",
+      "adjudication": "-",
+      "package": "Employee pro",
+      "createdAt": "Dec 1, 2016 02:15:55 PM",
+      "completedDate": "Dec 4, 2016 12:00:00 PM",
+      "turnAroundTime": "1 Day, 14 hours"
+    },
+    {
+      "id": 4,
+      "candidateId": 4,
+      "status": "clear",
+      "adjudication": "-",
+      "package": "Employee pro",
+      "createdAt": "Dec 1, 2016 02:15:55 PM",
+      "completedDate": "Dec 4, 2016 12:00:00 PM",
+      "turnAroundTime": "1 Day, 14 hours"
+    },
+    {
+      "id": 5,
+      "candidateId": 5,
+      "status": "consider",
+      "adjudication": "-",
+      "package": "Employee pro",
+      "createdAt": "Dec 1, 2016 02:15:55 PM",
+      "completedDate": "Dec 4, 2016 12:00:00 PM",
+      "turnAroundTime": "1 Day, 14 hours"
+    },
+    {
+      "id": 6,
+      "candidateId": 6,
+      "status": "clear",
+      "adjudication": "-",
+      "package": "Employee pro",
+      "createdAt": "Dec 1, 2016 02:15:55 PM",
+      "completedDate": "Dec 4, 2016 12:00:00 PM",
+      "turnAroundTime": "1 Day, 14 hours"
+    },
+    {
+      "id": 7,
+      "candidateId": 7,
+      "status": "consider",
+      "adjudication": "-",
+      "package": "Employee pro",
+      "createdAt": "Dec 1, 2016 02:15:55 PM",
+      "completedDate": "Dec 4, 2016 12:00:00 PM",
+      "turnAroundTime": "1 Day, 14 hours"
+    },
+    {
+      "id": 8,
+      "candidateId": 8,
+      "status": "clear",
+      "adjudication": "-",
+      "package": "Employee pro",
+      "createdAt": "Dec 1, 2016 02:15:55 PM",
+      "completedDate": "Dec 4, 2016 12:00:00 PM",
+      "turnAroundTime": "1 Day, 14 hours"
+    },
+    {
+      "id": 9,
+      "candidateId": 9,
+      "status": "consider",
+      "adjudication": "-",
+      "package": "Employee pro",
+      "createdAt": "Dec 1, 2016 02:15:55 PM",
+      "completedDate": "Dec 4, 2016 12:00:00 PM",
+      "turnAroundTime": "1 Day, 14 hours"
+    },
+    {
+      "id": 10,
+      "candidateId": 10,
+      "status": "clear",
+      "adjudication": "-",
+      "package": "Employee pro",
+      "createdAt": "Dec 1, 2016 02:15:55 PM",
+      "completedDate": "Dec 4, 2016 12:00:00 PM",
+      "turnAroundTime": "1 Day, 14 hours"
+    }
+  ],
+  "courtSearches": [
+    {
+      "id": 1,
+      "candidateId": 1,
+      "searchTypes": [
+        {
+          "id":1,
+          "search": "SSN Verification",
+          "status": "CLEAR",
+          "date": "2/22/2022"
+        },
+        {
+          "id": 2,
+          "search": "Sex Offender",
+          "status": "CLEAR",
+          "date": "3/13/2022"
+        },
+        {
+          "id": 3,
+          "search": "Global Watchlist",
+          "status": "CONSIDER",
+          "date": "2/7/2022"
+        },
+        {
+          "id": 4,
+          "search": "Federal Criminal",
+          "status": "CLEAR",
+          "date": "2/20/2022"
+        },
+        {
+          "id": 5,
+          "search": "County Criminal",
+          "status": "CLEAR",
+          "date": "5/19/2022"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "candidateId": 2,
+      "searchTypes": [
+        {
+          "id":1,
+          "search": "SSN Verification",
+          "status": "CLEAR",
+          "date": "2/22/2022"
+        },
+        {
+          "id": 2,
+          "search": "Sex Offender",
+          "status": "CLEAR",
+          "date": "3/13/2022"
+        },
+        {
+          "id": 3,
+          "search": "Global Watchlist",
+          "status": "CONSIDER",
+          "date": "2/7/2022"
+        },
+        {
+          "id": 4,
+          "search": "Federal Criminal",
+          "status": "CLEAR",
+          "date": "2/20/2022"
+        },
+        {
+          "id": 5,
+          "search": "County Criminal",
+          "status": "CLEAR",
+          "date": "5/19/2022"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "candidateId": 3,
+      "searchTypes": [
+        {
+          "id":1,
+          "search": "SSN Verification",
+          "status": "CLEAR",
+          "date": "2/22/2022"
+        },
+        {
+          "id": 2,
+          "search": "Sex Offender",
+          "status": "CLEAR",
+          "date": "3/13/2022"
+        },
+        {
+          "id": 3,
+          "search": "Global Watchlist",
+          "status": "CONSIDER",
+          "date": "2/7/2022"
+        },
+        {
+          "id": 4,
+          "search": "Federal Criminal",
+          "status": "CLEAR",
+          "date": "2/20/2022"
+        },
+        {
+          "id": 5,
+          "search": "County Criminal",
+          "status": "CLEAR",
+          "date": "5/19/2022"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "candidateId": 4,
+      "searchTypes": [
+        {
+          "id":1,
+          "search": "SSN Verification",
+          "status": "CLEAR",
+          "date": "2/22/2022"
+        },
+        {
+          "id": 2,
+          "search": "Sex Offender",
+          "status": "CLEAR",
+          "date": "3/13/2022"
+        },
+        {
+          "id": 3,
+          "search": "Global Watchlist",
+          "status": "CONSIDER",
+          "date": "2/7/2022"
+        },
+        {
+          "id": 4,
+          "search": "Federal Criminal",
+          "status": "CLEAR",
+          "date": "2/20/2022"
+        },
+        {
+          "id": 5,
+          "search": "County Criminal",
+          "status": "CLEAR",
+          "date": "5/19/2022"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "candidateId": 5,
+      "searchTypes": [
+        {
+          "id":1,
+          "search": "SSN Verification",
+          "status": "CLEAR",
+          "date": "2/22/2022"
+        },
+        {
+          "id": 2,
+          "search": "Sex Offender",
+          "status": "CLEAR",
+          "date": "3/13/2022"
+        },
+        {
+          "id": 3,
+          "search": "Global Watchlist",
+          "status": "CONSIDER",
+          "date": "2/7/2022"
+        },
+        {
+          "id": 4,
+          "search": "Federal Criminal",
+          "status": "CLEAR",
+          "date": "2/20/2022"
+        },
+        {
+          "id": 5,
+          "search": "County Criminal",
+          "status": "CLEAR",
+          "date": "5/19/2022"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "candidateId": 6,
+      "searchTypes": [
+        {
+          "id":1,
+          "search": "SSN Verification",
+          "status": "CLEAR",
+          "date": "2/22/2022"
+        },
+        {
+          "id": 2,
+          "search": "Sex Offender",
+          "status": "CLEAR",
+          "date": "3/13/2022"
+        },
+        {
+          "id": 3,
+          "search": "Global Watchlist",
+          "status": "CONSIDER",
+          "date": "2/7/2022"
+        },
+        {
+          "id": 4,
+          "search": "Federal Criminal",
+          "status": "CLEAR",
+          "date": "2/20/2022"
+        },
+        {
+          "id": 5,
+          "search": "County Criminal",
+          "status": "CLEAR",
+          "date": "5/19/2022"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "candidateId": 7,
+      "searchTypes": [
+        {
+          "id":1,
+          "search": "SSN Verification",
+          "status": "CLEAR",
+          "date": "2/22/2022"
+        },
+        {
+          "id": 2,
+          "search": "Sex Offender",
+          "status": "CLEAR",
+          "date": "3/13/2022"
+        },
+        {
+          "id": 3,
+          "search": "Global Watchlist",
+          "status": "CONSIDER",
+          "date": "2/7/2022"
+        },
+        {
+          "id": 4,
+          "search": "Federal Criminal",
+          "status": "CLEAR",
+          "date": "2/20/2022"
+        },
+        {
+          "id": 5,
+          "search": "County Criminal",
+          "status": "CLEAR",
+          "date": "5/19/2022"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "candidateId": 8,
+      "searchTypes": [
+        {
+          "id":1,
+          "search": "SSN Verification",
+          "status": "CLEAR",
+          "date": "2/22/2022"
+        },
+        {
+          "id": 2,
+          "search": "Sex Offender",
+          "status": "CLEAR",
+          "date": "3/13/2022"
+        },
+        {
+          "id": 3,
+          "search": "Global Watchlist",
+          "status": "CONSIDER",
+          "date": "2/7/2022"
+        },
+        {
+          "id": 4,
+          "search": "Federal Criminal",
+          "status": "CLEAR",
+          "date": "2/20/2022"
+        },
+        {
+          "id": 5,
+          "search": "County Criminal",
+          "status": "CLEAR",
+          "date": "5/19/2022"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "candidateId": 9,
+      "searchTypes": [
+        {
+          "id":1,
+          "search": "SSN Verification",
+          "status": "CLEAR",
+          "date": "2/22/2022"
+        },
+        {
+          "id": 2,
+          "search": "Sex Offender",
+          "status": "CLEAR",
+          "date": "3/13/2022"
+        },
+        {
+          "id": 3,
+          "search": "Global Watchlist",
+          "status": "CONSIDER",
+          "date": "2/7/2022"
+        },
+        {
+          "id": 4,
+          "search": "Federal Criminal",
+          "status": "CLEAR",
+          "date": "2/20/2022"
+        },
+        {
+          "id": 5,
+          "search": "County Criminal",
+          "status": "CLEAR",
+          "date": "5/19/2022"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "candidateId": 10,
+      "searchTypes": [
+        {
+          "id":1,
+          "search": "SSN Verification",
+          "status": "CLEAR",
+          "date": "2/22/2022"
+        },
+        {
+          "id": 2,
+          "search": "Sex Offender",
+          "status": "CLEAR",
+          "date": "3/13/2022"
+        },
+        {
+          "id": 3,
+          "search": "Global Watchlist",
+          "status": "CONSIDER",
+          "date": "2/7/2022"
+        },
+        {
+          "id": 4,
+          "search": "Federal Criminal",
+          "status": "CLEAR",
+          "date": "2/20/2022"
+        },
+        {
+          "id": 5,
+          "search": "County Criminal",
+          "status": "CLEAR",
+          "date": "5/19/2022"
+        }
+      ]
+    }
+  ],
+  "candidatesInformation": [
+    {
+      "id": 1,
+      "candidateId": 1,
+      "name": "John Smith",
+      "adjudication": "-",
+      "status": "CLEAR",
+      "location": "Barrouallie",
+      "date": "2/22/2022"
+    },
+    {
+      "id": 2,
+      "candidateId": 2,
+      "name": "Jane Doe",
+      "adjudication": "-",
+      "status": "CLEAR",
+      "location": "Kingstown",
+      "date": "3/15/2022"
+    },
+    {
+      "id": 3,
+      "candidateId": 3,
+      "name": "David Johnson",
+      "adjudication": "-",
+      "status": "CONSIDER",
+      "location": "Georgetown",
+      "date": "4/5/2022"
+    },
+    {
+      "id": 4,
+      "candidateId": 4,
+      "name": "Sarah Wilson",
+      "adjudication": "-",
+      "status": "CLEAR",
+      "location": "Roseau",
+      "date": "5/20/2022"
+    },
+    {
+      "id": 5,
+      "candidateId": 5,
+      "name": "Michael Brown",
+      "adjudication": "-",
+      "status": "CLEAR",
+      "location": "Castries",
+      "date": "6/10/2022"
+    },
+    {
+      "id": 6,
+      "candidateId": 6,
+      "name": "Laura Davis",
+      "adjudication": "-",
+      "status": "CLEAR",
+      "location": "Basseterre",
+      "date": "7/1/2022"
+    },
+    {
+      "id": 7,
+      "candidateId": 7,
+      "name": "Robert Taylor",
+      "adjudication": "-",
+      "status": "CONSIDER",
+      "location": "Saint John's",
+      "date": "8/15/2022"
+    },
+    {
+      "id": 8,
+      "candidateId": 8,
+      "name": "Elizabeth Harris",
+      "adjudication": "-",
+      "status": "CONSIDER",
+      "location": "Port of Spain",
+      "date": "9/10/2022"
+    },
+    {
+      "id": 9,
+      "candidateId": 9,
+      "name": "William Clark",
+      "adjudication": "-",
+      "status": "CLEAR",
+      "location": "Bridgetown",
+      "date": "10/5/2022"
+    },
+    {
+      "id": 10,
+      "candidateId": 10,
+      "name": "Amanda King",
+      "adjudication": "-",
+      "status": "CONSIDER",
+      "location": "Nassau",
+      "date": "11/25/2022"
+    }
+  ],
+  "adverseActions": [
+    {
+      "id": 1,
+      "candidateId": 1,
+      "name": "John Smith",
+      "status": "SCHEDULED",
+      "preNoticeDate": "22-02-2022",
+      "postNoticeDate": "22-02-2022"
+    },
+    {
+      "id": 2,
+      "candidateId": 2,
+      "name": "Jane Doe",
+      "status": "SCHEDULED",
+      "preNoticeDate": "15-03-2022",
+      "postNoticeDate": "15-03-2022"
+    },
+    {
+      "id": 3,
+      "candidateId": 3,
+      "name": "David Johnson",
+      "status": "SCHEDULED",
+      "preNoticeDate": "05-04-2022",
+      "postNoticeDate": "05-04-2022"
+    },
+    {
+      "id": 4,
+      "candidateId": 4,
+      "name": "Sarah Wilson",
+      "status": "SCHEDULED",
+      "preNoticeDate": "20-05-2022",
+      "postNoticeDate": "20-05-2022"
+    },
+    {
+      "id": 5,
+      "candidateId": 5,
+      "name": "Michael Brown",
+      "status": "SCHEDULED",
+      "preNoticeDate": "10-06-2022",
+      "postNoticeDate": "10-06-2022"
+    },
+    {
+      "id": 6,
+      "candidateId": 6,
+      "name": "Laura Davis",
+      "status": "SCHEDULED",
+      "preNoticeDate": "01-07-2022",
+      "postNoticeDate": "01-07-2022"
+    },
+    {
+      "id": 7,
+      "candidateId": 7,
+      "name": "Robert Taylor",
+      "status": "SCHEDULED",
+      "preNoticeDate": "15-08-2022",
+      "postNoticeDate": "15-08-2022"
+    },
+    {
+      "id": 8,
+      "candidateId": 8,
+      "name": "Elizabeth Harris",
+      "status": "SCHEDULED",
+      "preNoticeDate": "10-09-2022",
+      "postNoticeDate": "10-09-2022"
+    },
+    {
+      "id": 9,
+      "candidateId": 9,
+      "name": "William Clark",
+      "status": "SCHEDULED",
+      "preNoticeDate": "05-10-2022",
+      "postNoticeDate": "05-10-2022"
+    },
+    {
+      "id": 10,
+      "candidateId": 10,
+      "name": "Amanda King",
+      "status": "SCHEDULED",
+      "preNoticeDate": "25-11-2022",
+      "postNoticeDate": "25-11-2022"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'Inter-Medium';
+  src: local('Inter-Medium'),
+    url('./../public/assets/font/Inter-Medium.ttf') format('opentype');
+}
+@font-face {
+  font-family: 'Inter-Regular';
+  src: local('Inter-Regular'),
+    url('./../public/assets/font/Inter-Regular.ttf') format('opentype');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
