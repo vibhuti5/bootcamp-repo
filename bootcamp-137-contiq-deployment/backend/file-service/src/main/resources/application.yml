@@ -1,0 +1,28 @@
+server:
+  port: ${SERVER_PORT_FILE_SERVICE}
+
+spring:
+  application:
+    name: FILE-SERVICE
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT}/eureka/
+  instance:
+    preferIpAddress: false
+    hostname: ${EUREKA_HOST:localhost}
+
+elasticsearch:
+  cluster-name: ${ELASTIC_SEARCH_CLUSTER_NAME}
+  cluster-nodes: ${ELASTIC_SEARCH_CLUSTER_NODE}
+  host: ${ELASTIC_SEARCH_HOST}
+  port: ${ELASTIC_SEARCH_PORT}
+  username: ${ELASTIC_SEARCH_USERNAME}
+  password: ${ELASTIC_SEARCH_PASSWORD}

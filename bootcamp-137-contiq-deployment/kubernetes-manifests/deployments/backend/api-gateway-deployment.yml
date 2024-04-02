@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: be-api-gateway-deployment
+  labels:
+    type: api-gateway-deployment
+spec:
+  template:
+    metadata:
+      name: be-api-gateway-pod
+      labels:
+        type: api-gateway-pod
+    spec:
+      containers:
+        - name: be-api-gateway-container
+          image: znlzcracrtestipd.azurecr.io/bootcamp137-backend-api-gateway:a055db8150588e80c11d8f27a3383905a174423e
+          imagePullPolicy: Always
+          resources: {}
+          env:
+            - name: eureka.client.serviceUrl.defaultZone
+              value: https://bc137-be.dev-apps.io/eureka/
+
+            - name: eureka.client.instance.hostname
+              value: be-api-gateway-service
+              
+            - name: SERVER_PORT_API_GATEWAY
+              value: "9191"
+          ports:
+            - containerPort: 9191
+
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: application
+                    operator: In
+                    values:
+                      - bootcamp137
+
+      tolerations:
+        - key: "bootcamp"
+          operator: "Equal"
+          value: "137"
+          effect: "NoExecute"
+
+  replicas: 1
+  selector:
+    matchLabels:
+      type: api-gateway-pod

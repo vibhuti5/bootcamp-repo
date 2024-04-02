@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: be-notification-service-deployment
+  labels:
+    type: notification-service-deployment
+spec:
+  template:
+    metadata:
+      name: be-notification-service-pod
+      labels:
+        type: notification-service-pod
+    spec:
+      containers:
+        - name: be-notification-service-container
+          image: znlzcracrtestipd.azurecr.io/bootcamp137-backend-notification-service:a055db8150588e80c11d8f27a3383905a174423e
+          imagePullPolicy: Always
+          resources: {}
+          envFrom:
+            - secretRef:
+                name: database-credentials
+          env:
+            - name: eureka.client.serviceUrl.defaultZone
+              value: https://bc137-be.dev-apps.io/eureka/
+
+            - name: eureka.instance.hostname
+              value: be-notification-service-service
+
+            - name: SERVER_PORT_NOTIFICATION_SERVICE
+              value: "9003"
+
+            - name: DATABASE_URL
+              value: "jdbc:mysql://db-service:3306/bc-137-contiq"
+            
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: MYSQL_USER
+                  
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: MYSQL_PASSWORD
+
+            - name: DB_HOST
+              value: db-service
+            
+          ports:
+            - containerPort: 9003
+
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: application
+                    operator: In
+                    values:
+                      - bootcamp137
+
+      tolerations:
+        - key: "bootcamp"
+          operator: "Equal"
+          value: "137"
+          effect: "NoExecute"
+
+  replicas: 1
+  selector:
+    matchLabels:
+      type: notification-service-pod

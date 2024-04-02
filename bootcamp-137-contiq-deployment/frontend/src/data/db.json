@@ -1,0 +1,84 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John",
+      "email": "John@zemosolabs.com",
+      "password": "John@123",
+      "notification_count": 0
+    },
+    {
+      "id": 2,
+      "name": "Mark",
+      "email": "mark@zemosolabs.com",
+      "password": "Mark@1234",
+      "notification_count": 0
+    },
+    {
+      "id": 3,
+      "name": "Sarah",
+      "email": "sarah@gmail.com",
+      "password": "Sarah@5678",
+      "notification_count": 2
+    },
+    {
+      "id": 4,
+      "name": "Michael",
+      "email": "michael@gmail.com",
+      "password": "Michael@9012",
+      "notification_count": 1
+    }
+  ],
+  "notifications": [
+    {
+      "id": 1,
+      "message": "John has uploaded Company Profile.pdf",
+      "type": "UPDATED",
+      "created_at": "2023-11-10T19:45:04.174Z",
+      "updated_at": "2023-11-10T19:45:04.174Z",
+      "userId": 1,
+      "fileId": 1
+    },
+    {
+      "id": 2,
+      "message": "Sarah has uploaded Company agreement.pdf",
+      "type": "CREATED",
+      "created_at": "2023-11-10T19:45:04.174Z",
+      "updated_at": "2023-11-10T19:45:04.174Z",
+      "userId": 2,
+      "fileId": 2
+    }
+  ],
+  "files": [
+    {
+      "id": 1,
+      "name": "Company Profile.pdf",
+      "type": "PDF",
+      "content": "File data here",
+      "path": "../../public/assets/files/Company Profile.pdf",
+      "created_at": "2023-11-10T19:45:04.174Z",
+      "updated_at": "2023-11-10T19:45:04.174Z",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "Company agreement.pdf",
+      "type": "PDF",
+      "content": "File data here",
+      "path": "../../public/assets/files/Company agreement.pdf",
+      "created_at": "2023-11-10T19:45:04.174Z",
+      "updated_at": "2023-11-10T19:45:04.174Z",
+      "userId": 2
+    },
+    {
+      "id": 3,
+      "name": "sample.pdf",
+      "type": "PDF",
+      "content": "File data here",
+      "path": "../../public/assets/files/Company transformation.pdf",
+      "created_at": "2023-11-10T19:45:04.174Z",
+      "updated_at": "2023-11-10T19:45:04.174Z",
+      "userId": 1
+    }
+  ]
+}

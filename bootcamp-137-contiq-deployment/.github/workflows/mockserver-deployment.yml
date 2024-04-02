@@ -1,0 +1,91 @@
+name: Bootcamp137 - Mockserver deployment on Azure 
+run-name: Mockserver deployment update triggered by ${{ github.actor }}.
+on:
+  push: 
+    branches:
+      - deployment 
+    paths: 
+      - frontend/src/data/db.json
+      - .github/workflows/mockserver-deployment.yml
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  mockserver-build-push:
+    name: Build and Push the mockserver docker image
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend/src/data/
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Fetch secrets from Azure Keyvault
+        uses: zemoso-int/get-keyvault-secrets@master
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          keyvault: bootcamp-137
+          secrets: |
+            REGISTRY_LOGIN_SERVER=registry-login-server
+            REGISTRY_USERNAME=registry-username
+            REGISTRY_PASSWORD=registry-password
+    
+      - name: 'Docker Login'
+        uses: azure/docker-login@v1
+        with:
+            login-server: ${{ env.REGISTRY_LOGIN_SERVER }} 
+            username: ${{ env.REGISTRY_USERNAME }} 
+            password: ${{ env.REGISTRY_PASSWORD }} 
+    
+      - name: Build the mockserver image and push it to ACR
+        uses: docker/build-push-action@v2
+        with:
+            push: true
+            tags: ${{ env.REGISTRY_LOGIN_SERVER }}/bootcamp137-mockserver:${{ github.sha }}
+            context: frontend/src/data
+
+  mockserver-update-manifest:
+    name: Update the mockserver deployment manifest with latest docker image
+    needs: mockserver-build-push
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: kubernetes-manifests/deployments
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Fetch secrets from Azure Keyvault
+        uses: zemoso-int/get-keyvault-secrets@master
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          keyvault: bootcamp-137
+          secrets: |
+            REGISTRY_LOGIN_SERVER=registry-login-server
+      
+      - name: Update image tag
+        run: |
+          sed -i 's|image: .*|image: ${{ env.REGISTRY_LOGIN_SERVER }}/bootcamp137-mockserver:${{ github.sha }}|' mockserver-deploy.yml
+      
+      - name: Get the Commit author email
+        run: |
+          git fetch origin ${GITHUB_REF:11} # fetches the branch
+          EMAIL=$(git log -1 --pretty=format:'%ae' HEAD)
+      
+      - name: Commit the changes
+        run: |
+          set -x
+          cd ${{github.workspace}}
+          git config --local user.email "$EMAIL"
+          git config --local user.name ${{ github.actor }}
+          git pull origin deployment
+          git commit -am "Update image tag to ${{ github.sha }}"
+          git push -u origin deployment
+

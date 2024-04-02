@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: be-user-service-service
+  labels:
+    type: user-service-service
+spec:
+  type: ClusterIP
+  ports:
+    - targetPort: 9001
+      port: 9001
+  selector:
+    type: user-service-pod

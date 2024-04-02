@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment 
+metadata:
+  name: db-deployment
+  labels:
+    type: db
+spec:
+  template: 
+    metadata:
+      name: db-pod
+      labels:
+        type: db
+    spec:
+      containers:
+        - name: db-container
+          image: mysql:8.0
+          imagePullPolicy: Always
+          resources: {}
+          envFrom:
+            - secretRef:
+                name: db-secret
+          args:
+            - "--bind-address=0.0.0.0"
+            - "--max_connections=5000"
+          volumeMounts:
+            - name: data-persistence
+              mountPath: /var/lib/mysql
+
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: application
+                    operator: In
+                    values:
+                      - bootcamp137
+
+      tolerations:						
+        - key: "bootcamp"						
+          operator: "Equal"					
+          value: "137"					  
+          effect: "NoExecute"
+
+      volumes:
+        - name: data-persistence
+          persistentVolumeClaim:
+            claimName: mysql-pv-claim
+        
+  replicas: 1
+  selector:
+    matchLabels: 
+      type: db

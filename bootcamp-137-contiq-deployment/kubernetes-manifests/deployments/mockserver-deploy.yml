@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mockserver-deployment
+  labels:
+    type: mockserver
+spec:
+  template: 
+    metadata:
+      name: mockserver-pod
+      labels:
+        type: mockserver
+    spec:
+      containers:
+        - name: mockserver-container
+          image: znlzcracrtestipd.azurecr.io/bootcamp137-mockserver:6980a1c25e95c0559cb96384831fedaf980ac958
+          ports: 
+            - containerPort: 3005
+          imagePullPolicy: Always
+          resources: {}
+      
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: application
+                    operator: In
+                    values:
+                      - bootcamp137
+      
+      tolerations:						
+        - key: "bootcamp"						
+          operator: "Equal"					
+          value: "137"					  
+          effect: "NoExecute"
+
+  replicas: 1
+  selector:
+    matchLabels:
+      type: mockserver

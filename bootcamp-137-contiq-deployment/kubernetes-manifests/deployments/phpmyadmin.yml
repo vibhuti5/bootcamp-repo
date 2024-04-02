@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phpmyadmin-deployment
+  labels:
+    app: phpmyadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: phpmyadmin
+  template:
+    metadata:
+      labels:
+        app: phpmyadmin
+    spec:
+      containers:
+        - name: phpmyadmin
+          image: phpmyadmin
+          ports:
+            - containerPort: 80
+          env:
+            - name: PMA_HOSTS
+              value: "mysql-service,mysql-service.databasetest"
+            - name: PMA_PORTS
+              value: "3306,3306"
+          resources: {}
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                - key: application
+                  operator: In
+                  values:
+                    - bootcamp137
+
+      tolerations:						
+        - key: "bootcamp"						
+          operator: "Equal"					
+          value: "137"					  
+          effect: "NoExecute"

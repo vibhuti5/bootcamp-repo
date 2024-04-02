@@ -1,0 +1,46 @@
+server:
+  port: ${SERVER_PORT_API_GATEWAY}
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/**
+        - id: FILE-SERVICE
+          uri: lb://FILE-SERVICE
+          predicates:
+            - Path=/files/**
+          filters:
+            - AuthenticationFilter
+        - id: NOTIFICATION-SERVICE
+          uri: lb://NOTIFICATION-SERVICE
+          predicates:
+            - Path=/notifications/**
+          filters:
+            - AuthenticationFilter
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        corsConfigurations:
+          "[/**]":
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods: "*"
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://${EUREKA_HOST:localhost}:${EUREKA_PORT}/eureka/
+    instance:
+      hostname: ${EUREKA_HOST:localhost}
+
+custom:
+  secret_id: 2a10Fe2YOiNvdYOxYR0hH1mrCO8h9DiFfdAsnH8eOVj5JNOGJFn6QJBjq

@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  labels:
+    type: frontend
+spec:
+  template:
+    metadata:
+      name: frontend-pod
+      labels:
+        type: frontend
+    spec:
+      containers:
+        - name: frontend-container
+          image: znlzcracrtestipd.azurecr.io/bootcamp137-frontend:a055db8150588e80c11d8f27a3383905a174423e
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Always
+          resources: {}
+
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: application
+                    operator: In
+                    values:
+                      - bootcamp137
+
+      tolerations:
+        - key: "bootcamp"
+          operator: "Equal"
+          value: "137"
+          effect: "NoExecute"
+
+  replicas: 1
+  selector:
+    matchLabels:
+      type: frontend
