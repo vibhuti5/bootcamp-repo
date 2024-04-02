@@ -43,4 +43,4 @@ eureka:
       hostname: ${EUREKA_HOST:localhost}
 
 custom:
-  secret_id: 2a10Fe2YOiNvdYOxYR0hH1mrCO8h9DiFfdAsnH8eOVj5JNOGJFn6QJBjq
+  secret_id: 'secret-id'
