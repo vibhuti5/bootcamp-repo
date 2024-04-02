@@ -392,6 +392,6 @@ export const HOMEPAGE_TITLE = 'Home'
 export const HOMEPAGE_SUBTITLE = 'Recent'
 export const NO_NOTIFICATION = 'No Notifications'
 
-export const API_KEY = 'AIzaSyB4gnHpCD6zHLVDi9n5BUCJXqiQjP0av9Q'
+export const API_KEY = 'API KEY'
 export const CLIENT_ID =
   '924242553453-4afc3gninbcnuot6ce8g6nld31463i1m.apps.googleusercontent.com'
